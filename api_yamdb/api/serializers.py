@@ -6,7 +6,7 @@ from rest_framework.serializers import ModelSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from api.utils import account_access_token
-from reviews.models import Genre, Comment, Category, Title, Review
+from reviews.models import Category, Comment, Genre, Review, Title
 
 User = get_user_model()
 

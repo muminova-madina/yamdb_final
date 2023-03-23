@@ -13,11 +13,8 @@ from csv import DictReader
 import django
 from django.core.management.base import BaseCommand
 
-from .constants import (
-    ALREDY_LOADED_ERROR_MESSAGE,
-    HELP_MESSAGE,
-    WARNING_MESSAGE,
-)
+from .constants import (ALREDY_LOADED_ERROR_MESSAGE, HELP_MESSAGE,
+                        WARNING_MESSAGE)
 
 
 class Command(BaseCommand):

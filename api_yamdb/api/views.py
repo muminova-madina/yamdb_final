@@ -1,32 +1,25 @@
 from django.contrib.auth import get_user_model
 from django.db.models import Avg
-from rest_framework import status, filters
-from rest_framework import viewsets
-from rest_framework.decorators import api_view, action
+from rest_framework import filters, status, viewsets
+from rest_framework.decorators import action, api_view
 from rest_framework.generics import get_object_or_404
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import (IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_simplejwt.views import TokenViewBase
 
 from api.filters import TitleFilter
 from api.mixins import CreateListDestroyViewSet
-from api.permissions import IsAdmin
-from api.permissions import IsAdminOrReadOnly, IsOwnerOrStaffOrReadOnly
-from api.serializers import (
-    GenreSerializer,
-    CommentSerializer,
-    CategorySerializer,
-    TitleReadSerializer,
-    TitleCreateSerializer,
-    ReviewSerializer,
-    UserSignUpSerializer,
-    TokenObtainSerializer,
-    UserSerializer,
-)
+from api.permissions import (IsAdmin, IsAdminOrReadOnly,
+                             IsOwnerOrStaffOrReadOnly)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, ReviewSerializer,
+                             TitleCreateSerializer, TitleReadSerializer,
+                             TokenObtainSerializer, UserSerializer,
+                             UserSignUpSerializer)
 from api.utils import send_email
-from reviews.models import Genre, Review, Category, Title
+from reviews.models import Category, Genre, Review, Title
 
 User = get_user_model()
 
