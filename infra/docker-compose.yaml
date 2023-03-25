@@ -8,7 +8,6 @@ services:
       - ./.env
   web:
     image: madina/yamdb:latest
-    build: ../api_yamdb
     restart: always
     volumes:
       - static_value:/app/static/
