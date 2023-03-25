@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: madina/yamdb:latest
+    image: madina/yamdb_final:latest
     restart: always
     volumes:
       - static_value:/app/static/
