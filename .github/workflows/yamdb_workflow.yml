@@ -41,7 +41,7 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: api_yamdb/
+          context: ./api_yamdb/
           push: true
           tags: ognennayazvezda/yamdb_final:latest
   deploy:
@@ -52,14 +52,14 @@ jobs:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          context: api_yamdb/
+          context: ./api_yamdb/
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker-compose down
-            sudo docker compose image rm ognennayazvezda/yamdb_final:latest
+            sudo docker compose stop
+            sudo docker compose rm web
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -67,8 +67,6 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            
-            sudo docker pull ognennayazvezda/yamdb_final:latest
             sudo docker compose up -d
   send_message:
     runs-on: ubuntu-latest
