@@ -57,7 +57,7 @@ jobs:
           push: true
           context: ./api_yamdb/
           file: api_yamdb/Dockerfile
-          tags: madina/yamdb_final:latest
+          tags: ognennaya_zvezda/yamdb_final:latest
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
