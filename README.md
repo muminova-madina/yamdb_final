@@ -1,5 +1,5 @@
 # yamdb_final
-https://github.com/madina-zvezda/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+https://github.com/madina-zvezda/yamdb_final/actions/workflows/yamdb_workflow/badge.svg
 
 ### Адрес сайта
 http://130.193.39.45/redoc/
