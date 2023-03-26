@@ -2,9 +2,9 @@
 https://github.com/madina-zvezda/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg
 
 ### Адрес сайта
-http://130.193.39.45/redoc/
+http://http://51.250.105.140/redoc/
 ### Пример запроса
-http://130.193.39.45/api/v1/titles/
+http://51.250.105.140/api/v1/titles/
 ## Описание
 Сайт является - базой отзывов о фильмах, книгах и музыке.
 Пользователи могут оставлять рецензии на произведения, а также комментировать эти рецензии.
